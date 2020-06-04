@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Agency - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/web-fonts-with-css/css/fontawesome-all.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/codekraft-studio/angular-page-loader/master/dist/angular-page-loader.css">
+
+    <!-- Custom styles for this template -->
+    <link href="./style/agency.css" rel="stylesheet">
+  </head>
+
+  <body id="page-top" ng-app="app">
+    <page-loader></page-loader>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark default-top" id="mainNav">
+      <div class="container">
+        <div class="logo-wrapper">
+            <a href="" class="main-logo">
+              <img src="./img/logo_pomniejszone.png" width="70%" height="70%" alt="Car Comfort" />
+            </a>
+        </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div ng-controller="MenuCtrl" class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#/!">Strona główna</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="#!cars">Nasza oferta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!rent">Rezerwuj</a>
+            </li>
+          </ul>
+          <md-button class="md-primary md-raised" ng-click="showAdvanced($event)">Logowanie</md-button>
+        </div>
+      </div>
+    </nav>
+
+    <div ng-view></div>
+    <!-- Footer -->
+    <section class="footer-up">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+              <p><span class="fa fa-phone"></span> Telefon: +48 22 38 243</p>
+          </div>
+          <div class="col-md-4">
+              <p><span class="fa fa-envelope"></span> Mail: carcomfort@gmail.com</p>
+          </div>
+          <div class="col-md-4">
+              <p><span class="fas fa-map-marker-alt"></span> Lokalizacja: Trzebownisko 527A, 36-001 Trzebownisko</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; Your Website 2018</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-snapchat"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="./bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="./bower_components/popper/index.js" type="text/javascript"></script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/script.js"></script>
+    <script src="./bower_components/angular/angular.min.js" type="text/javascript"></script>
+    <script src="./bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js" type="text/javascript"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js" type="text/javascript"></script>
+    <script src="./bower_components/angular-messages/angular-messages.js" type="text/javascript"></script>
+    <script src="./bower_components/angular-material/angular-material.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/codekraft-studio/angular-page-loader/master/dist/angular-page-loader.min.js"></script>
+    <!-- Angular Controllers -->
+    <script src="js/cars.js"></script>
+    <script src="js/productList.js"></script>
+    <script src="js/rentForm.js"></script>
+    <!-- Angular Directives -->
+
+    <script type="text/javascript">
+      angular.module('app',['ngMaterial', 'ngMessages', 'ngRoute', 'cars', 'product-list', 'rent-form', 'angular-page-loader'])
+      .config(function ($routeProvider) {
+        $routeProvider
+        .when("/", {
+          templateUrl: "./templates/pages/home/home.html"
+        })
+        .when("/cars", {
+          templateUrl: "./templates/pages/cars/cars.html"
+        })
+        .when("/car/:id", {
+          templateUrl: "./templates/pages/car/car.html",
+          controller: 'carDetailsController'
+        })
+        .when("/rent", {
+          templateUrl: "./templates/pages/rent/rent.html",
+          controller: 'productListController'
+        })
+        .when("/rent/:id", {
+          templateUrl: "./templates/pages/rent_form/rent_form.html",
+          controller: 'rentFormController'
+        });
+      })
+      .controller('MenuCtrl', function ($scope, $mdDialog, $http) {
+          $scope.showAdvanced = function(ev) {
+            function DialogController($scope, $mdDialog, $http) {
+                $scope.hide = function() {
+                  $mdDialog.hide();
+                };
+
+                $scope.cancel = function() {
+                  $mdDialog.cancel();
+                };
+
+                $scope.answer = function() {
+                  console.log($scope.project);
+                  $http.post("api/logowanie.php", $scope.project)
+                  .then(function(response) {
+
+                  }, function (response) {
+
+                  });
+                };
+            };
+            $mdDialog.show({
+              controller: DialogController,
+              templateUrl: './templates/includes/login-form/login-form.html',
+              parent: angular.element(document.body),
+              targetEvent: ev,
+              clickOutsideToClose:true,
+              fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+            })
+            .then(function(answer) {
+              $scope.status = 'You said the information was "' + answer + '".';
+            }, function() {
+              $scope.status = 'You cancelled the dialog.';
+            });
+          };
+      });
+    </script>
+
+    <!-- Custom scripts for this template -->
+    <script src="./js/agency.js"></script>
+  </body>
+
+</html>

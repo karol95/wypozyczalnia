@@ -1,0 +1,46 @@
+<md-dialog aria-label="Logowanie">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Logowanie</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          X
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content layout-padding>
+      <div class="md-dialog-content">
+        <form name="loginForm" action="api/logowanie.php"  ng-submit="answer()">
+          <md-input-container class="md-block">
+            <label>Email</label>
+            <input required type="email" name="userEmail" ng-model="project.userEmail"
+                   md-minlength="10" md-maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+
+            <div ng-messages="loginForm.userEmail.$error" role="alert">
+              <div ng-message-exp="['required', 'md-minlength', 'md-maxlength', 'ng-pattern']">
+                Your email must be between 10 and 100 characters long and look like an e-mail address.
+              </div>
+            </div>
+          </md-input-container>
+          <md-input-container flex="50">
+              <label>Hasło</label>
+              <input required name="userPassword" type="password" md-minlength="8" md-maxlength="32" ng-model="project.userPassword">
+              <div ng-messages="loginForm.userPassword.$error" role="alert">
+                <div ng-message="required">Pole wymagane.</div>
+                <div ng-message="md-minlength">Minimum 8 znaków.</div>
+                <div ng-message="md-maxlength">Maximum 32 znaki.</div>
+              </div>
+          </md-input-container>
+          <div class="row">
+            <md-button type="submit" class="md-raised md-primary">Zaloguj</md-button>
+            <md-button ng-click="answer()">
+              Close
+            </md-button>
+          </div>
+        </form>
+      </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>

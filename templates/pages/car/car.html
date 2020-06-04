@@ -1,0 +1,54 @@
+<section class="container-fluid">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active" id="pic-1"><img src="{{curr_car.zdjecie}}" /></div>
+						  
+						</div>
+						<ul class="preview-thumbnail nav nav-tabs">
+						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{curr_car.zdjecie}}" /></a></li>
+						  
+						</ul>
+						
+					</div>
+					<div class="details col-md-6">
+						<h3 class="product-title">{{curr_car.marka + " " + curr_car.model}}</h3>
+						<div class="rating">
+							<div class="stars">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+							<span class="review-no">2 opinie</span>
+						</div>
+						<p class="product-description">
+							<table class="table">
+								<tr>
+									<td>Kategoria:</td>
+									<td>{{curr_car.kategoria}}</td>
+								</tr>
+								<tr>
+									<td>Kolor:</td>
+									<td>{{curr_car.kolor}}</td>
+								</tr>
+								<tr>
+									<td>Rok produkcji:</td>
+									<td>{{curr_car.rok}}</td>
+								</tr>
+							</table>
+						</p>
+						<h4 class="price">Cena wynajmu za dzień: <span>{{curr_car.cena}}</span> zł</h4>
+						
+						<div class="action">
+							<md-button class="md-raised md-primary" style="padding: 15px;" ng-href="#!rent/{{curr_car.id}}">Wynajmij</md-button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>

@@ -1,0 +1,14 @@
+{
+  "name": "popper.js",
+  "_cacheHeaders": {
+    "ETag": "W/\"14a87-16291061e00\"",
+    "Last-Modified": "Wed, 04 Apr 2018 14:18:40 GMT",
+    "Content-Type": "application/javascript; charset=utf-8"
+  },
+  "_release": "e-tag:W/\"14a87-1",
+  "main": "index.js",
+  "_source": "https://unpkg.com/popper.js",
+  "_target": "*",
+  "_originalSource": "https://unpkg.com/popper.js",
+  "_direct": true
+}

@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4" ng-repeat="car in cars">
+			<figure class="card card-product">
+				<div class="img-wrap"><img src="{{car.zdjecie}}"></div>
+				<figcaption class="info-wrap">
+						<h4 class="title">{{car.marka + " " + car.model}}</h4>
+						<p class="desc">Rok produkcji: {{car.rok}}</p>
+						
+				</figcaption>
+				<div class="bottom-wrap">
+					<md-button class="md-raised md-primary" ng-href="#!car/{{car.id}}">Szczegóły</md-button>
+					<div class="price-wrap h5">
+						<span class="price-new">{{car.cena}} zł za dzień.</span>
+					</div>
+				</div>
+			</figure>
+		</div>
+	</div>
+</div> 

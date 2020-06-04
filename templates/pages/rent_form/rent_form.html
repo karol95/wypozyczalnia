@@ -1,0 +1,79 @@
+<div  ng-cloak class="container">
+  <md-content>
+    <form name="projectForm" ng-controller="carDetailsController">
+      <div class="card">
+        <div class="container-fliud">
+          <div class="wrapper row">
+            <div class="preview col-md-6">
+              <div class="preview-pic tab-content">
+                <div class="tab-pane active" id="pic-1"><img src="{{curr_car.zdjecie}}" class="img-thumbnail"/></div>
+              </div>
+              
+            </div>
+            <div class="details col-md-6">
+              <h3 class="product-title">{{curr_car.marka + " " + curr_car.model}}</h3>
+              <p class="product-description">
+                <table class="table">
+                  <tr>
+                    <td>Kategoria:</td>
+                    <td>{{curr_car.kategoria}}</td>
+                  </tr>
+                  <tr>
+                    <td>Kolor:</td>
+                    <td>{{curr_car.kolor}}</td>
+                  </tr>
+                  <tr>
+                    <td>Rok produkcji:</td>
+                    <td>{{curr_car.rok}}</td>
+                  </tr>
+                </table>
+              </p>
+              <h4 class="price">Cena: <span>{{curr_car.cena}}</span> zł</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <md-input-container class="md-block">
+        <label>Miejsce zwrotu</label>
+        <input md-maxlength="30" required md-no-asterisk name="description" ng-model="project.description">
+        <div ng-messages="projectForm.description.$error">
+          <div ng-message="required">Pole wymagane.</div>
+          <div ng-message="md-maxlength">Max 30 znaków.</div>
+        </div>
+      </md-input-container>
+
+
+
+        <md-input-container class="md-block">
+          <div>
+            <h5>Od</h5>
+            <md-datepicker ng-model="product._od" md-placeholder="Wybierz datę"></md-datepicker>
+          </div>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <div >
+            <h5>Do:</h5>
+            <md-datepicker ng-model="product._do" md-placeholder="Wybierz datę"></md-datepicker>
+          </div>
+        </md-input-container>
+      </div>
+
+      <md-input-container class="md-block">
+        <md-checkbox name="tos" ng-model="project.tos" required>
+          Akceptuję politykę prywatności.
+        </md-checkbox>
+        <div ng-messages="projectForm.tos.$error" multiple md-auto-hide="false">
+          <div ng-message="required">
+            Musisz zaznaczyć, że zgadzasz się na nasze warunki.
+          </div>
+        </div>
+      </md-input-container>
+      <div>
+        <md-button type="submit" class="md-raised md-primary">Zapisz</md-button>
+      </div>
+    </form>
+  </md-content>
+
+</div>

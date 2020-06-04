@@ -1,0 +1,163 @@
+<section style="padding: 0px;" width="100%" height="100vh">
+      <div id="top-slider" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#top-slider" data-slide-to="0" class="active"></li>
+          <li data-target="#top-slider" data-slide-to="1"></li>
+          <li data-target="#top-slider" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="./img/slider/slide1.png" alt="Pierwszy slajd">
+            <div class="carousel-caption">
+              <h5>Nowy wymiar bezpieczeństwa i komfortu.</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./img/slider/slide2.jpg" alt="Drugi slajd">
+            <div class="carousel-caption">
+              <h5>Niezawodność i gwarancja niskiej ceny.</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./img/slider/slide3.jpg" alt="Trzeci slajd">
+            <div class="carousel-caption">
+              <h5>Jak w trasę to tylko z nami.</h5>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#top-slider" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Poprzedni</span>
+        </a>
+        <a class="carousel-control-next" href="#top-slider" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Następny</span>
+        </a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Usługi</h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-car fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Wynajem</h4>
+            <p class="text-muted">Wynajmujemy samochody na krótkie i długie terminy. Dla stałych klientów atrakcyjne zniżki!</p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+               <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Sprzedaż</h4>
+            <p class="text-muted">Oferujemy również sprzedaż samochodów używanych. Jest możliwość sprowadzenia pojazdu do Polski z innegro kraju.</p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-cog fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Naprawa</h4>
+            <p class="text-muted">Nasza wykwalifikowana ekipa znajdzie usterkę w Twoim samochdzie i naprawi go w dobrej cenie.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Kontakt</h2>
+            <h3 class="section-subheading text-muted">Masz pytanie? Napisz do nas wypełniając poniższy formularz.</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contactForm" name="projectForm">
+              <div class="row">
+                <div class="col-md-6">
+                  <md-input-container class="md-block">
+                    <label>Imię</label>
+                    <input md-maxlength="30" required name="name" ng-model="project.name">
+                    <div ng-messages="projectForm.name.$error">
+                      <div ng-message="required">Pole wymagane.</div>
+                      <div ng-message="md-maxlength">Imię nusi zawierać mniej niż 30 znaków.</div>
+                    </div>
+                  </md-input-container>
+                   <md-input-container class="md-block">
+                    <label>Nazwisko</label>
+                    <input md-maxlength="30" required name="surrname" ng-model="project.surrname">
+                    <div ng-messages="projectForm.surrname.$error">
+                      <div ng-message="required">Pole wymagane.</div>
+                      <div ng-message="md-maxlength">Nazwisko nusi zawierać mniej niż 30 znaków.</div>
+                    </div>
+                  </md-input-container>
+                  <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input required type="email" name="clientEmail" ng-model="project.clientEmail"
+                           minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+
+                    <div ng-messages="projectForm.clientEmail.$error" role="alert">
+                      <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                        Email musi być poprawnie zapisany oraz musi mieć od 10 do 100 znaków.
+                      </div>
+                    </div>
+                  </md-input-container>
+                  <md-input-container class="md-block">
+                    <label>Telefon</label>
+                    <input maxlength="12" minlength="9" required name="phone" ng-model="project.phone">
+                    <div ng-messages="projectForm.phone.$error">
+                      <div ng-message="required">Pole wymagane.</div>
+                      <div ng-message-exp="['maxlength', 'minlength']">Telefon musi zawierać 9-12 znaków.</div>
+                    </div>
+                  </md-input-container>
+                </div>
+                <div class="col-md-6">
+                   <md-input-container class="md-block">
+                      <label>Treść wiadomości</label>
+                      <textarea required name="message" ng-model="project.message" md-maxlength="256" rows="8" md-select-on-focus></textarea>
+                      <div ng-messages="projectForm.message.$error">
+                        <div ng-message="required">Pole wymagane.</div>
+                        <div ng-message="md-maxlength">Pole nie może zawierać więcej niż 256 znaków.</div>
+                      </div>
+                    </md-input-container>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <md-button class="md-raised md-primary" type="submit">Submit</md-button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <section class="how-to-drive">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+               <h2 class="section-heading text-uppercase">Jak dojechać?</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Google Map API -->
+    <section style="padding: 0px; height: 400px; width: 100%">
+        <div class="row">
+                <iframe class="embed-responsive-item" height="400px" width="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.496268671718!2d22.02466884978679!3d50.07699476581089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ce4d10ea36b8b%3A0xec677fee86a796a5!2sTrzebownisko+527A%2C+36-001+Trzebownisko!5e0!3m2!1spl!2spl!4v1528800072314"></iframe>
+        </div>
+    </section>
